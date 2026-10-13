@@ -1,0 +1,21 @@
+# Raw sequencing data is not versioned here; it goes to SRA at publication.
+# The small example FASTQs under figure1C_crispra_screen/example_data/ are
+# committed deliberately (git add -f) so the counting step is runnable.
+*.fastq
+*.fastq.gz
+*.sra
+
+# Large intermediates: genome FASTA, BAMs, fasterq-dump scratch
+work/
+
+# Regenerable step output
+figure1C_crispra_screen/counts/
+figure1C_crispra_screen/*_counts.tsv
+figure1C_crispra_screen/*_unmatched.tsv
+figure1A_parahenipavirus_map/output/Rplots.pdf
+*.log
+
+__pycache__/
+.venv/
+.Rhistory
+.DS_Store

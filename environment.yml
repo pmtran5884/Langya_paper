@@ -1,0 +1,27 @@
+# Single environment covering the Python and command-line tools used by every
+# figure in this repository:
+#   conda env create -f environment.yml && conda activate langya-paper
+#
+# Figure 1A needs R instead (ggplot2, sf, dplyr, rnaturalearth,
+# rnaturalearthdata) - see figure1A_parahenipavirus_map/README.md.
+name: langya-paper
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  # Figure 1C (CRISPRa screen)
+  - python=3.11
+  - numpy>=1.23
+  - pandas>=1.5
+  - scipy>=1.9
+  - matplotlib>=3.6
+  - requests>=2.28
+  # Figure 5 (EPCR recovery). mafft alone is enough for the offline path;
+  # the rest are needed only for a full re-run from assemblies and reads.
+  - mafft>=7.5
+  - miniprot=0.18
+  - minimap2>=2.28
+  - samtools>=1.20
+  - bcftools>=1.20
+  - sra-tools>=3.1
+  - curl

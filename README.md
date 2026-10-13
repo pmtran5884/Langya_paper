@@ -31,7 +31,7 @@ submission) with its runtime and disk cost.
 
 ## What is committed, and what is not
 
-Committed, so a reviewer can check a number without re-running anything:
+Committed:
 
 * the sgRNA library key and the per-guide count matrix for all three screen arms
 * the exact `.chip` and log-fold-change files submitted to the Broad GPP portal,
@@ -45,24 +45,6 @@ and other large intermediates. Raw sequencing data goes to SRA at publication.
 `figure1C_crispra_screen/example_data/` holds a 30,000-read subsample of two
 screen arms purely so the counting step is runnable; it is too shallow to
 reproduce the paper's gene scores.
-
-## Verification already done
-
-These are checks on this repository, not on the original analyses:
-
-* `figure1C .../02_make_apron_input.py` reproduces the submitted
-  `layg_crispra.chip` and `layg_crispra_input.txt` **byte for byte** from the
-  committed count matrix.
-* `figure1C .../04_volcano_apron.py` reproduces the paper's gene-score table
-  exactly (max absolute difference 0 against the table in `Lay-G-CRISPRa`), with
-  PROCR at Apron score 9.145947, p = 7.15 × 10⁻¹⁰, BH-FDR = 2.22 × 10⁻⁶ — the
-  only gene below FDR 0.1.
-* `figure1C .../01b_build_count_matrix.py` round-trips the committed count
-  matrix exactly.
-* `figure5 .../04_align_and_report.py` regenerates `proteins_all.faa`,
-  `cds_all.fna`, `protein_identity.tsv`, `summary.tsv` and
-  `codon_differences.tsv` byte-identically to the committed copies.
-* `figure1A .../make_world_map.R` runs clean and reproduces the committed panel.
 
 ## Environment
 

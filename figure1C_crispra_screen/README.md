@@ -33,7 +33,13 @@ Expected console line:
 LayG1st: 6,138 genes (249 control) | enriched FDR<0.1: 1 | PROCR score 9.145947 p=7.15e-10 FDR=2.22e-06
 ```
 
-PROCR (EPCR) is the only gene below FDR 0.1 in either direction.
+PROCR (EPCR) is the only gene below FDR 0.1 in either direction. Its four guides
+hold 0.005 % of Mock reads and 2.04 % of LayG1st reads (10.63 % in LayG2nd),
+which can be checked directly in `data/sgrna_count_matrix.csv`.
+
+Re-running overwrites the committed figure files. The PNG and the gene-score CSV
+come back byte-identical; the PDF and SVG differ only in the embedded creation
+date and matplotlib's internal element ids, with every coordinate unchanged.
 
 ## Reproduce the analysis from the count matrix (~10 s, needs network)
 
